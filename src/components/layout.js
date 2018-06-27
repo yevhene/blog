@@ -6,10 +6,9 @@ import { rhythm, scale } from '../utils/typography'
 class Template extends React.Component {
   render() {
     const { location, children } = this.props
-    const rootPath = `${__PATH_PREFIX__}/`
     let header
 
-    if (location.pathname === rootPath) {
+    if (location.pathname === '/') {
       header = (
         <h1
           style={{
@@ -26,7 +25,7 @@ class Template extends React.Component {
             }}
             to={'/'}
           >
-            Gatsby Starter Blog
+            React та JavaScript
           </Link>
         </h1>
       )
@@ -47,7 +46,7 @@ class Template extends React.Component {
             }}
             to={'/'}
           >
-            Gatsby Starter Blog
+            React та JavaScript
           </Link>
         </h3>
       )
