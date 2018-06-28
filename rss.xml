@@ -1,119 +1,72 @@
-<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[Gatsby Starter Blog]]></title><description><![CDATA[A starter blog demonstrating what Gatsby can do.]]></description><link>https://yevhene.github.io/blog/</link><generator>RSS for Node</generator><lastBuildDate>Wed, 27 Jun 2018 17:38:55 GMT</lastBuildDate><item><title><![CDATA[New Beginnings]]></title><description><![CDATA[Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts. Separated they live in…]]></description><link>https://yevhene.github.io/blog//hi-folks/</link><guid isPermaLink="false">https://yevhene.github.io/blog//hi-folks/</guid><pubDate>Thu, 28 May 2015 22:40:32 GMT</pubDate><content:encoded>&lt;p&gt;Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-right at the coast of the Semantics, a large language ocean. A small river named
-Duden flows by their place and supplies it with the necessary regelialia.&lt;/p&gt;
-&lt;h2&gt;On deer horse aboard tritely yikes and much&lt;/h2&gt;
-&lt;p&gt;The Big Oxmox advised her not to do so, because there were thousands of bad
-Commas, wild Question Marks and devious Semikoli, but the Little Blind Text
-didn’t listen. She packed her seven versalia, put her initial into the belt and
-made herself on the way.&lt;/p&gt;
+<?xml version="1.0" encoding="UTF-8"?><rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title><![CDATA[React та JavaScript]]></title><description><![CDATA[Блог про React та JavaScript.]]></description><link>https://yevhene.github.io/blog/</link><generator>RSS for Node</generator><lastBuildDate>Thu, 28 Jun 2018 09:02:44 GMT</lastBuildDate><item><title><![CDATA[React 16 (fiber і далі)]]></title><description><![CDATA[Опубліковано на  DOU  29.09.2017 Fiber Це нова архітектура, що покладена в основу React 16. Велика частина коду була переписана з нуля…]]></description><link>https://yevhene.github.io/blog//react-fiber/</link><guid isPermaLink="false">https://yevhene.github.io/blog//react-fiber/</guid><pubDate>Fri, 29 Sep 2017 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;Опубліковано на &lt;a href=&quot;https://dou.ua/lenta/articles/react-fiber/&quot;&gt;DOU&lt;/a&gt; 29.09.2017&lt;/p&gt;
+&lt;h2&gt;Fiber&lt;/h2&gt;
+&lt;p&gt;Це нова архітектура, що покладена в основу React 16. Велика частина коду була переписана з нуля. Основною метою було створення можливості для пріоритизації оновлень контенту. Також переписана система обробки помилок та усунуті деякі старі незручності, наприклад, необхідність обгортати декілька елементів в один кореневий елемент. Існуюче API, на щастя, майже не зачіпили.&lt;/p&gt;
+&lt;h2&gt;&lt;a href=&quot;https://present-fiber-demo.herokuapp.com/&quot;&gt;Демо&lt;/a&gt;&lt;/h2&gt;
+&lt;p&gt;Розпочати знайомство краще всього з проблеми, яку має вирішити нова версія. Її добре видно на демо. Демо синтетичне, симулює щось накшталт екрану диспетчерської таксі. На карті міста жовті машини. На машинах чорні числа, що вказують скільки машині ще їхати до точки призначення. Числа змінюються кожної секунди, і під час цієї зміни, анімація підлагує. Лаги з’являються тому, що виконується дві паралельні дії: обробка анімації та оновлення DOM. Анімація працює добре аж до поки не стається масоване оновлення DOM.&lt;/p&gt;
+&lt;p&gt;Щоб проблему було краще видно, введена штучна затримка, не забувайте що демо синтетичне. Але проблема цілком реальна: поки переобраховується DOM, анімація не програється, через те що всі ресурси покладено на роботу з DOM. І в рамках старої архітектури React, цю проблему не можна було вирішити аж ніяк. Треба віддати належне розробникам бібліотеки - вони, зіткнувшись з цією проблемою, переписали значну частину коду. Не дивлячись на це, міграція не має викликати великі труднощі.&lt;/p&gt;
+&lt;p&gt;Забігаючи наперед, скажу, що якщо натиснути на чекбокс зверху, демо переключиться у режим &lt;em&gt;fiber&lt;/em&gt; і перестане гальмувати. (До речі, не залишайте демо надовго на самоті, бо воно казиться).&lt;/p&gt;
+&lt;h2&gt;Наразі&lt;/h2&gt;
+&lt;p&gt;React, для забезпечення вискої швидкості роботи, виористовує технологію &lt;em&gt;Vitrual DOM&lt;/em&gt;: В пам’яті підтримується спрощена копія DOM, де за вузлами закріплені конкретні &lt;em&gt;екземпляри&lt;/em&gt; (instance) компонентів, що ними керують. Коли змінюється стан екземпляру, відбувається процес оновлення, що складається з етапів:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;This however showed weasel&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Well uncritical so misled&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;this is very interesting&lt;/li&gt;
+&lt;li&gt;Компоненти опитуються щодо змін;&lt;/li&gt;
+&lt;li&gt;DOM в пам’яті перебудовується;&lt;/li&gt;
+&lt;li&gt;Обраховується різниця з реальним деревом DOM, та вносяться безпосередні зміни.&lt;/li&gt;
 &lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Goodness much until that fluid owl&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;When she reached the first hills of the &lt;strong&gt;Italic Mountains&lt;/strong&gt;, she had a last
-view back on the skyline of her hometown &lt;em&gt;Bookmarksgrove&lt;/em&gt;, the headline of
-&lt;a href=&quot;http://google.com&quot;&gt;Alphabet Village&lt;/a&gt; and the subline of her own road, the Line
-Lane. Pityful a rethoric question ran over her cheek, then she continued her
-way. On her way she met a copy.&lt;/p&gt;
-&lt;h3&gt;Overlaid the jeepers uselessly much excluding&lt;/h3&gt;
-&lt;p&gt;But nothing the copy said could convince her and so it didn’t take long until a
-few insidious Copy Writers ambushed her, made her drunk with
-&lt;a href=&quot;http://google.com&quot;&gt;Longe and Parole&lt;/a&gt; and dragged her into their agency, where
-they abused her for their projects again and again. And if she hasn’t been
-rewritten, then they are still using her.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts. Separated they live in Bookmarksgrove
-right at the coast of the Semantics, a large language ocean.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;It is a paradisematic country, in which roasted parts of sentences fly into your
-mouth. Even the all-powerful Pointing has no control about the blind texts it is
-an almost unorthographic life One day however a small line of blind text by the
-name of Lorem Ipsum decided to leave for the far World of Grammar.&lt;/p&gt;
-&lt;h3&gt;According a funnily until pre-set or arrogant well cheerful&lt;/h3&gt;
-&lt;p&gt;The Big Oxmox advised her not to do so, because there were thousands of bad
-Commas, wild Question Marks and devious Semikoli, but the Little Blind Text
-didn’t listen. She packed her seven versalia, put her initial into the belt and
-made herself on the way.&lt;/p&gt;
+&lt;p&gt;Минулі версії React для оновлення використовували алгоритм, що його заднім числом назвали &lt;em&gt;Stack&lt;/em&gt;. І в нього, з часом, виявився значний недолік: він працює простим пошуком в глибину і його робота неперервна. А оскільки в браузері все виконується в одному потоці, то під час оновлення, інші процеси мають зачекати. У випаду високоприорітетних оновлень, наприклад анімаціі, це може стати відчутним клопотом.&lt;/p&gt;
+&lt;h2&gt;Новий алгоритм оновлення&lt;/h2&gt;
+&lt;p&gt;Архітектура &lt;em&gt;fiber&lt;/em&gt; названа на честь алгоритму, що лежить в її основі. Алгоритм полягає у розбитті процесу оновлення на дві фази:&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;So baboon this&lt;/li&gt;
-&lt;li&gt;Mounted militant weasel gregariously admonishingly straightly hey&lt;/li&gt;
-&lt;li&gt;Dear foresaw hungry and much some overhung&lt;/li&gt;
-&lt;li&gt;Rash opossum less because less some amid besides yikes jeepers frenetic
-impassive fruitlessly shut&lt;/li&gt;
+&lt;li&gt;Фаза &lt;em&gt;узгодження&lt;/em&gt; (reconciliation) - коли виконуються переобрахунки компонентів і відбувається оновлення DOM у пам’яті;&lt;/li&gt;
+&lt;li&gt;Фаза &lt;em&gt;внеску&lt;/em&gt; (commit) - коли виконується безпосереднє оновлення DOM.&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;When she reached the first hills of the Italic Mountains, she had a last view
-back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet
-Village and the subline of her own road, the Line Lane. Pityful a rethoric
-question ran over her cheek, then she continued her way. On her way she met a
-copy.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;The copy warned the Little Blind Text, that where it came from it would have
-been rewritten a thousand times and everything that was left from its origin
-would be the word “and” and the Little Blind Text should turn around and
-return to its own, safe country.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;But nothing the copy said could convince her and so it didn’t take long until a
-few insidious Copy Writers ambushed her, made her drunk with Longe and Parole
-and dragged her into their agency, where they abused her for their projects
-again and again. And if she hasn’t been rewritten, then they are still using
-her. Far far away, behind the word mountains, far from the countries Vokalia and
-Consonantia, there live the blind texts.&lt;/p&gt;
-&lt;h4&gt;Silent delightfully including because before one up barring chameleon&lt;/h4&gt;
-&lt;p&gt;Separated they live in Bookmarksgrove right at the coast of the Semantics, a
-large language ocean. A small river named Duden flows by their place and
-supplies it with the necessary regelialia. It is a paradisematic country, in
-which roasted parts of sentences fly into your mouth.&lt;/p&gt;
-&lt;p&gt;Even the all-powerful Pointing has no control about the blind texts it is an
-almost unorthographic life One day however a small line of blind text by the
-name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox
-advised her not to do so, because there were thousands of bad Commas, wild
-Question Marks and devious Semikoli, but the Little Blind Text didn’t listen.&lt;/p&gt;
-&lt;h5&gt;Wherever far wow thus a squirrel raccoon jeez jaguar this from along&lt;/h5&gt;
-&lt;p&gt;She packed her seven versalia, put her initial into the belt and made herself on
-the way. When she reached the first hills of the Italic Mountains, she had a
-last view back on the skyline of her hometown Bookmarksgrove, the headline of
-Alphabet Village and the subline of her own road, the Line Lane. Pityful a
-rethoric question ran over her cheek, then she continued her way. On her way she
-met a copy.&lt;/p&gt;
-&lt;h6&gt;Slapped cozy a that lightheartedly and far&lt;/h6&gt;
-&lt;p&gt;The copy warned the Little Blind Text, that where it came from it would have
-been rewritten a thousand times and everything that was left from its origin
-would be the word “and” and the Little Blind Text should turn around and return
-to its own, safe country. But nothing the copy said could convince her and so it
-didn’t take long until a few insidious Copy Writers ambushed her, made her drunk
-with Longe and Parole and dragged her into their agency, where they abused her
-for their projects again and again.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[My Second Post!]]></title><description><![CDATA[Wow! I love blogging so much already. Did you know that “despite its name, salted duck eggs can also be made from
-chicken eggs, though the…]]></description><link>https://yevhene.github.io/blog//my-second-post/</link><guid isPermaLink="false">https://yevhene.github.io/blog//my-second-post/</guid><pubDate>Wed, 06 May 2015 23:46:37 GMT</pubDate><content:encoded>&lt;p&gt;Wow! I love blogging so much already.&lt;/p&gt;
-&lt;p&gt;Did you know that “despite its name, salted duck eggs can also be made from
-chicken eggs, though the taste and texture will be somewhat different, and the
-egg yolk will be less rich.”?
-(&lt;a href=&quot;http://en.wikipedia.org/wiki/Salted_duck_egg&quot;&gt;Wikipedia Link&lt;/a&gt;)&lt;/p&gt;
-&lt;p&gt;Yeah, I didn’t either.&lt;/p&gt;</content:encoded></item><item><title><![CDATA[Hello World]]></title><description><![CDATA[This is my first post on my new fake blog! How exciting! I’m sure I’ll write a lot more interesting things in the future. Oh, and here’s a…]]></description><link>https://yevhene.github.io/blog//hello-world/</link><guid isPermaLink="false">https://yevhene.github.io/blog//hello-world/</guid><pubDate>Fri, 01 May 2015 22:12:03 GMT</pubDate><content:encoded>&lt;p&gt;This is my first post on my new fake blog! How exciting!&lt;/p&gt;
-&lt;p&gt;I’m sure I’ll write a lot more interesting things in the future.&lt;/p&gt;
-&lt;p&gt;Oh, and here’s a great quote from this Wikipedia on
-&lt;a href=&quot;http://en.wikipedia.org/wiki/Salted_duck_egg&quot;&gt;salted duck eggs&lt;/a&gt;.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;A salted duck egg is a Chinese preserved food product made by soaking duck
-eggs in brine, or packing each egg in damp, salted charcoal. In Asian
-supermarkets, these eggs are sometimes sold covered in a thick layer of salted
-charcoal paste. The eggs may also be sold with the salted paste removed,
-wrapped in plastic, and vacuum packed. From the salt curing process, the
-salted duck eggs have a briny aroma, a gelatin-like egg white and a
-firm-textured, round yolk that is bright orange-red in color.&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;
+&lt;p&gt;Варто зазначити, що фазу &lt;em&gt;узгодження&lt;/em&gt; (reconciliation), можна переривати. &lt;em&gt;fiber&lt;/em&gt; за допомогою &lt;a href=&quot;https://developer.mozilla.org/ru/docs/Web/API/Window/requestIdleCallback&quot;&gt;requestIdleCallback&lt;/a&gt;, просить у браузера виділити час, коли той не буде завантажений роботою. При зворотньому виклику, браузер вказує скільки, власне, в нього є вільного часу. Це дає змогу &lt;em&gt;fiber&lt;/em&gt;-у планувати частину оновлень на цей проміжок. Якщо браузер не підтримує &lt;code class=&quot;language-text&quot;&gt;requestIdleCallback&lt;/code&gt;, то React робить &lt;em&gt;поліфіл&lt;/em&gt; (polyfill).&lt;/p&gt;
+&lt;p&gt;Алгоритм &lt;em&gt;fiber&lt;/em&gt; у свою чергу названий на честь найменшого об’єкта, що лежить в його основі. За кожним еземпляром (компонента чи елемента) закріплений такий об’єкт, що контролює його стан та зв’язок з іншими компонентами.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;
+      &lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  stateNode
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt;
+  child
+  sibling
+  parent
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h2&gt;Процес оновлення виглядає наступним чином:&lt;/h2&gt;
+&lt;p&gt;У нас є &lt;em&gt;поточне&lt;/em&gt; (current) дерево компонентів та елементів, сформоване за допомогою об’єктів &lt;em&gt;fiber&lt;/em&gt;. Стрілочки вниз це &lt;code class=&quot;language-text&quot;&gt;child&lt;/code&gt;, вверх &lt;code class=&quot;language-text&quot;&gt;parent&lt;/code&gt;, вправо &lt;code class=&quot;language-text&quot;&gt;sibling&lt;/code&gt;.
+&lt;img src=&quot;/blog/fiber-0-1032fe53e932ed2803e597e57dab3ca7.svg&quot; alt=&quot;current tree&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Створюється паралельне &lt;em&gt;робоче&lt;/em&gt; (workInProgress) дерево, що частково складається зі старого дерева.
+&lt;img src=&quot;/blog/fiber-1-a291c99c062e9e61c501e55832a3bd5b.svg&quot; alt=&quot;workInProgress tree&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Визначаються компоненти, що мають зміни (позначені зірочками).
+&lt;img src=&quot;/blog/fiber-2-d93165a67c4657c44ccf619e3688b13f.svg&quot; alt=&quot;determining which nodes to upgrade&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Дерево поступово розгортується, і на його основі відбудовується нове дерево. Там де є оновлення - клонуються елементи і вносяться зміни. Там де оновлень немає - використовуються існуючі елементи.
+&lt;img src=&quot;/blog/fiber-3-fe933e3e2bee62df87c9cb5cc13da908.svg&quot; alt=&quot;cloning DOM nodes&quot;&gt;&lt;/p&gt;
+&lt;p&gt;В результаті формується &lt;em&gt;внесок&lt;/em&gt; (pending commit). Що, для застосування, очікує вже більшого проміжку часу. Тому що фазу &lt;em&gt;внеску&lt;/em&gt; переривати не можна.
+&lt;img src=&quot;/blog/fiber-4-98cdb8bdaa54d916a5d5d7d777c8094a.svg&quot; alt=&quot;effects list&quot;&gt;&lt;/p&gt;
+&lt;p&gt;Після того, як відбувається &lt;em&gt;внесок&lt;/em&gt; (commit), &lt;em&gt;поточне&lt;/em&gt; (current) дерево не знищується. Для економії часу, дерева просто міняються місцями. Це називається &lt;em&gt;подвійна буферизація&lt;/em&gt; (double buffering).
+&lt;img src=&quot;/blog/fiber-5-6dfdc5011b2c8ecea57493c166ce0321.svg&quot; alt=&quot;double buffering&quot;&gt;&lt;/p&gt;
+&lt;h2&gt;Застосування&lt;/h2&gt;
+&lt;p&gt;Для того щоб відчути нові можливості необхідно застосувати режим &lt;em&gt;відкладених оновлень&lt;/em&gt; &lt;code class=&quot;language-text&quot;&gt;ReactDOM.unstable_deferredUpdates&lt;/code&gt;. (Всі експериментальні можливості спочатку поставляються з префіксом &lt;code class=&quot;language-text&quot;&gt;unstable_&lt;/code&gt;).&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;
+      &lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token function&quot;&gt;tick&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  ReactDOM&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;unstable_deferredUpdates&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;prevState&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      tick&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; prevState&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;tick &lt;span class=&quot;token operator&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;token number&quot;&gt;1&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Оновлення що відбуваються в рамках &lt;code class=&quot;language-text&quot;&gt;deferredUpdates&lt;/code&gt; відбуваються паралельно.
+Зверніть увагу:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Необхідно застосовувати &lt;code class=&quot;language-text&quot;&gt;setState&lt;/code&gt; зі &lt;em&gt;зворотним викликом&lt;/em&gt; (callback), &lt;code class=&quot;language-text&quot;&gt;setState&lt;/code&gt; з об’єктом стає &lt;em&gt;застарілим&lt;/em&gt; (deprecated);&lt;/li&gt;
+&lt;li&gt;Якщно новий стан буде залежати від поточного стану, то необхідно використовувати параметр зворотнього виклику &lt;code class=&quot;language-text&quot;&gt;prevState&lt;/code&gt;, замість &lt;code class=&quot;language-text&quot;&gt;this.state&lt;/code&gt;. Тому що він може бути викликаний декілька разів.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Порівняння&lt;/h3&gt;
+&lt;p&gt;Жовтим позначені - оновлення, фіолетовим - анімації, червоним - лаги.&lt;/p&gt;
+&lt;p&gt;Stack:
+
   &lt;a
     class=&quot;gatsby-resp-image-link&quot;
-    href=&quot;/blog/static/salty_egg-8058f3f26913fea3b6a89a73344fe94a-3f5a1.jpg&quot;
+    href=&quot;/blog/static/perf-not-fiber-c6fbb945a3371f8db1675818db95be4b-edf7e.png&quot;
     style=&quot;display: block&quot;
     target=&quot;_blank&quot;
     rel=&quot;noopener&quot;
@@ -125,25 +78,174 @@ firm-textured, round yolk that is bright orange-red in color.&lt;/p&gt;
   &gt;
     &lt;span
       class=&quot;gatsby-resp-image-background-image&quot;
-      style=&quot;padding-bottom: 75%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAPABQDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAMB/8QAFwEAAwEAAAAAAAAAAAAAAAAAAAEEBf/aAAwDAQACEAMQAAABgik0dXC//8QAGRABAAMBAQAAAAAAAAAAAAAAAQACEhEy/9oACAEBAAEFAkqW2DlnRj73yf/EABcRAQADAAAAAAAAAAAAAAAAAAAREkH/2gAIAQMBAT8B1WX/xAAWEQEBAQAAAAAAAAAAAAAAAAAAEQL/2gAIAQIBAT8Bi6f/xAAbEAABBAMAAAAAAAAAAAAAAAAAAQIRISIxMv/aAAgBAQAGPwK9GNocyS8hCj//xAAbEAADAQADAQAAAAAAAAAAAAABESEAMUGBof/aAAgBAQABPyGxNMfrLHmCDZmAzzvJJDjEQCHv/9oADAMBAAIAAwAAABDIL//EABYRAQEBAAAAAAAAAAAAAAAAAAERAP/aAAgBAwEBPxARhylZv//EABgRAAIDAAAAAAAAAAAAAAAAAAABESFR/9oACAECAQE/EFoktI//xAAdEAEBAAICAwEAAAAAAAAAAAABEQAxIWFBcYHh/9oACAEBAAE/EEbMLQ0fMHDVaPIXyI4pk4JUnWacNCtO8ojDE9TGIYES7/Jn/9k=&apos;); background-size: cover; display: block;&quot;
+      style=&quot;padding-bottom: 11.608961303462321%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAIAAADXZGvcAAAACXBIWXMAAAsSAAALEgHS3X78AAAAYElEQVQI1zXJSwqEMAwAUO9/JJk5isg40tQ0ST9ITUTBuujy8QYX/2woFta0OPCm1S49b5MiwZM23i+5EUitMzO6MCz0w7r5HfDwCT6UJlbhitEkw5dy5xmLG7nMfbnxAcg+b5VeNugKAAAAAElFTkSuQmCC&apos;); background-size: cover; display: block;&quot;
     &gt;
       &lt;img
         class=&quot;gatsby-resp-image-image&quot;
         style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
-        alt=&quot;Chinese Salty Egg&quot;
+        alt=&quot;stack&quot;
         title=&quot;&quot;
-        src=&quot;/blog/static/salty_egg-8058f3f26913fea3b6a89a73344fe94a-f8fb9.jpg&quot;
-        srcset=&quot;/blog/static/salty_egg-8058f3f26913fea3b6a89a73344fe94a-e8976.jpg 148w,
-/blog/static/salty_egg-8058f3f26913fea3b6a89a73344fe94a-63df2.jpg 295w,
-/blog/static/salty_egg-8058f3f26913fea3b6a89a73344fe94a-f8fb9.jpg 590w,
-/blog/static/salty_egg-8058f3f26913fea3b6a89a73344fe94a-85e3d.jpg 885w,
-/blog/static/salty_egg-8058f3f26913fea3b6a89a73344fe94a-d1924.jpg 1180w,
-/blog/static/salty_egg-8058f3f26913fea3b6a89a73344fe94a-9452e.jpg 1770w,
-/blog/static/salty_egg-8058f3f26913fea3b6a89a73344fe94a-3f5a1.jpg 2048w&quot;
+        src=&quot;/blog/static/perf-not-fiber-c6fbb945a3371f8db1675818db95be4b-fb8a0.png&quot;
+        srcset=&quot;/blog/static/perf-not-fiber-c6fbb945a3371f8db1675818db95be4b-1a291.png 148w,
+/blog/static/perf-not-fiber-c6fbb945a3371f8db1675818db95be4b-2bc4a.png 295w,
+/blog/static/perf-not-fiber-c6fbb945a3371f8db1675818db95be4b-fb8a0.png 590w,
+/blog/static/perf-not-fiber-c6fbb945a3371f8db1675818db95be4b-526de.png 885w,
+/blog/static/perf-not-fiber-c6fbb945a3371f8db1675818db95be4b-edf7e.png 982w&quot;
         sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
       /&gt;
     &lt;/span&gt;
   &lt;/span&gt;
   
   &lt;/a&gt;
-    &lt;/p&gt;</content:encoded></item></channel></rss>
+    &lt;/p&gt;
+&lt;p&gt;Fiber:
+
+  &lt;a
+    class=&quot;gatsby-resp-image-link&quot;
+    href=&quot;/blog/static/perf-fiber-db8234e7294a275a601a78e4b9df0601-8f3e6.png&quot;
+    style=&quot;display: block&quot;
+    target=&quot;_blank&quot;
+    rel=&quot;noopener&quot;
+  &gt;
+  
+  &lt;span
+    class=&quot;gatsby-resp-image-wrapper&quot;
+    style=&quot;position: relative; display: block; ; max-width: 590px; margin-left: auto; margin-right: auto;&quot;
+  &gt;
+    &lt;span
+      class=&quot;gatsby-resp-image-background-image&quot;
+      style=&quot;padding-bottom: 11.902231668437834%; position: relative; bottom: 0; left: 0; background-image: url(&apos;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAACCAIAAADXZGvcAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAcElEQVQI1xXHyxGDIBQAQPvvJWkjF0tIBtSg7wPCKHmAyhjd2zY9K3+EUGVe/AfeNoPbfKiRAqLFvEupZT+PeQ1wN5W6XfVx0aZrlO0GbpV6cJpARhNhwJfWTxJyhUmQZaLYW/naBJyQfyOtV43L+AeT427o5bZonwAAAABJRU5ErkJggg==&apos;); background-size: cover; display: block;&quot;
+    &gt;
+      &lt;img
+        class=&quot;gatsby-resp-image-image&quot;
+        style=&quot;width: 100%; height: 100%; margin: 0; vertical-align: middle; position: absolute; top: 0; left: 0; box-shadow: inset 0px 0px 0px 400px white;&quot;
+        alt=&quot;fiber&quot;
+        title=&quot;&quot;
+        src=&quot;/blog/static/perf-fiber-db8234e7294a275a601a78e4b9df0601-fb8a0.png&quot;
+        srcset=&quot;/blog/static/perf-fiber-db8234e7294a275a601a78e4b9df0601-1a291.png 148w,
+/blog/static/perf-fiber-db8234e7294a275a601a78e4b9df0601-2bc4a.png 295w,
+/blog/static/perf-fiber-db8234e7294a275a601a78e4b9df0601-fb8a0.png 590w,
+/blog/static/perf-fiber-db8234e7294a275a601a78e4b9df0601-526de.png 885w,
+/blog/static/perf-fiber-db8234e7294a275a601a78e4b9df0601-8f3e6.png 941w&quot;
+        sizes=&quot;(max-width: 590px) 100vw, 590px&quot;
+      /&gt;
+    &lt;/span&gt;
+  &lt;/span&gt;
+  
+  &lt;/a&gt;
+    &lt;/p&gt;
+&lt;p&gt;Як бачинте обробка CSS анімацій не зупиняється, навіть при восокій завантаженості оновленнями DOM.&lt;/p&gt;
+&lt;h2&gt;Також&lt;/h2&gt;
+&lt;p&gt;Разом з новою архітектурою, при переписуванні React, були виправлені деякі, невеликі архітектурні помилки.&lt;/p&gt;
+&lt;h3&gt;Фрагменти (Fragments)&lt;/h3&gt;
+&lt;p&gt;Відтепер, якщо компонент повертає набір елементів, його не обов’язково обгортати в один корінний елемент. Ви можете повертати масив елементів, що дуже зручно в місцях, де неможливо просто обгорнути елементи в &lt;code class=&quot;language-text&quot;&gt;&amp;lt;div&amp;gt;&lt;/code&gt;. Наприклад, в роботі з таблицями і списками, якщо компонент має повернути декілька рядків або елементів списку. Також тепер можна повертати стрічки.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;
+      &lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;token function-variable function&quot;&gt;TableHeader&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;[&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;tr&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;th colspan&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;2&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;Автомобіль&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;th&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;th colspan&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;2&quot;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;Водій&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;th&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;tr&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;tr&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;th&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;Номер&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;th&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;th&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;Марка&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;th&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;th&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;Позивний&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;th&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;th&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;Телефон&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;th&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;tr&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;]&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h3&gt;Кордони помилок (Error boundaries)&lt;/h3&gt;
+&lt;p&gt;Запроваджена нова система обробки помилок. Тепер, якщо в компоненті виникає помилка, можна застосувати метод життєвого циклу &lt;code class=&quot;language-text&quot;&gt;componentDidCatch&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;
+      &lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token keyword&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;Map&lt;/span&gt; &lt;span class=&quot;token keyword&quot;&gt;extends&lt;/span&gt; &lt;span class=&quot;token class-name&quot;&gt;React&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;Component&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token function&quot;&gt;constructor&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;props&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;super&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;props&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;state &lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; hasError&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;false&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;token function&quot;&gt;componentDidCatch&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;error&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; info&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;setState&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;=&gt;&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt; hasError&lt;span class=&quot;token punctuation&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;token boolean&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+
+  &lt;span class=&quot;token function&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token keyword&quot;&gt;this&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;state&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;hasError&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;h1&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;На жаль&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; сталась прикра помилка&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;h1&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;
+    &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;MapContent &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;;&lt;/span&gt;
+  &lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h3&gt;Портали (Portals)&lt;/h3&gt;
+&lt;p&gt;Іноді виникає необхідність створити елемент не в рамках поточної ієрархії, а приєднати, наприклад, як у випадку з модальними вікнами, до &lt;code class=&quot;language-text&quot;&gt;&amp;lt;body&amp;gt;&lt;/code&gt;. На допомогу приходять портали.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;
+      &lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token function&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;token punctuation&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;token keyword&quot;&gt;return&lt;/span&gt; ReactDOM&lt;span class=&quot;token punctuation&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;token function&quot;&gt;createPortal&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;Modal &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;span class=&quot;token punctuation&quot;&gt;,&lt;/span&gt; domElement&lt;span class=&quot;token punctuation&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;token punctuation&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h3&gt;Атрибути (Attributes)&lt;/h3&gt;
+&lt;p&gt;React 16 дозволяє вам використовувати власні атрибути.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;
+      &lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;div hello&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;world&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Будьте обережні. Це означає, що фільтрація атрибутів більше не виконується.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;
+      &lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;div myData&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;[Object object]&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;p&gt;Тим не менш, атрибути що мають канонічне ім’я все одно валідуються. І вас буде попереджено, якщо ви використовуєте неправильне ім’я атрибута.&lt;/p&gt;
+&lt;div class=&quot;gatsby-highlight&quot; data-language=&quot;javascript&quot;&gt;
+      &lt;pre class=&quot;language-javascript&quot;&gt;&lt;code class=&quot;language-javascript&quot;&gt;&lt;span class=&quot;token comment&quot;&gt;// Warning: Invalid DOM property `tabindex`. Did you mean `tabIndex`?&lt;/span&gt;
+&lt;span class=&quot;token operator&quot;&gt;&amp;lt;&lt;/span&gt;div tabindex&lt;span class=&quot;token operator&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;token string&quot;&gt;&quot;-1&quot;&lt;/span&gt; &lt;span class=&quot;token operator&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;token operator&quot;&gt;&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
+      &lt;/div&gt;
+&lt;h2&gt;Майбутнє&lt;/h2&gt;
+&lt;p&gt;Потенціал нової архітектури реалізовано не повністю. І у розробників є багато планів на майбутнє, що стали реальними завдяки &lt;em&gt;fiber&lt;/em&gt;.&lt;/p&gt;
+&lt;h2&gt;Пріоритизація&lt;/h2&gt;
+&lt;p&gt;Оновлення всередині вже пріоритизуються, але цей процесс ще далекий від ідеалу, крім того, очікується більше контролю над цим процесом. Пріоритети:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Synchronous - Синхронний, виконується зараз;&lt;/li&gt;
+&lt;li&gt;Task - Задача, до наступного &lt;em&gt;тіку&lt;/em&gt; (tick);&lt;/li&gt;
+&lt;li&gt;Animation - Анімація, до наступного &lt;em&gt;кадру&lt;/em&gt; (frame);&lt;/li&gt;
+&lt;li&gt;High - Високий;&lt;/li&gt;
+&lt;li&gt;Low - Низький;&lt;/li&gt;
+&lt;li&gt;Offscreen/Hidden - схованний або поза межами екрану.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Превізуалізація (pre-rendering)&lt;/h3&gt;
+&lt;p&gt;Оскільки візуалізація розбита на дві фази, то можна чітко визначити коли все необхідне завантажене, обраховане і готове до відображення. Це відкриває шлях, в майбутньому, до потокового завантаження превізуалізованих на сервері компонентів. Також це має спростити етап завантаження великих аплікацій.&lt;/p&gt;
+&lt;h3&gt;Абстракція&lt;/h3&gt;
+&lt;p&gt;Мабуть, ви знаєте, що React наразі працює на великій кількості платформ. Наприклад:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Браузер: &lt;code class=&quot;language-text&quot;&gt;react-dom&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Мобільні: &lt;code class=&quot;language-text&quot;&gt;react-native&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Термінал: &lt;code class=&quot;language-text&quot;&gt;react-blessed&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Віртуальна реальність: &lt;code class=&quot;language-text&quot;&gt;aframe-react&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Arduino: &lt;code class=&quot;language-text&quot;&gt;react-hardware&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Команда React активно працює над тим, щоб зробити React незалежним від оточення. З версії &lt;code class=&quot;language-text&quot;&gt;v0.14&lt;/code&gt; ReactDOM був виділений в окремий пакет. З версії &lt;code class=&quot;language-text&quot;&gt;v0.16&lt;/code&gt; розробники рапортують, що React став (майже :)) повністю незалежний від браузера.&lt;/p&gt;
+&lt;h2&gt;Проблеми&lt;/h2&gt;
+&lt;p&gt;Коли запускається оновлення, а минуле ще обраховане не до кінця - то старе оновлення припиняється і його проміжний результат відкидається. Якщо таке стається регулярно, виникає ситуація коли дані на сторінці оновлюються нерегулярно або зовсім не оновлюються. Така ситуація називається &lt;em&gt;голодування&lt;/em&gt; &lt;code class=&quot;language-text&quot;&gt;starvation&lt;/code&gt;.&lt;/p&gt;
+&lt;h2&gt;Наслідки&lt;/h2&gt;
+&lt;h3&gt;Життєвий цикл компоненту&lt;/h3&gt;
+&lt;p&gt;Будьте уважні та обережні, якщо ви використовуєте відкладені оновлення. Деякі методи життєвого циклу під час одного оновлення можуть викликатись двічі або більше разів. Пов’язано це з тим, що оновлення може бути відкладене, через більш нагальні оновлення, а потім переобраховане.
+Це методи фази &lt;em&gt;узгодження&lt;/em&gt; (reconciliation):&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;componentWillMount&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;componentWillReceiveProps&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;shouldComponentUpdate&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;componentWillUpdate&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Методи фази &lt;em&gt;внеску&lt;/em&gt; (commit), викликаються тільки один раз:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;componentDidMount&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;componentDidUpdate&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code class=&quot;language-text&quot;&gt;componentWillUnmount&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Помилки&lt;/h3&gt;
+&lt;p&gt;Відтепер, з введенням кордонів помилок, React, у випадку помилки, не намагається продовжувати роботу. Це покладається на ваші плечі. Якщо є необроблена помилка, що доходить до верхнього рівня, дерево компонентів повністю перемонтується.&lt;/p&gt;
+&lt;h3&gt;Атрибути&lt;/h3&gt;
+&lt;p&gt;React більше не видаляє незнайомі атрибути і вам бажано (але не необхідно) це робити самим.&lt;/p&gt;
+&lt;h3&gt;setState&lt;/h3&gt;
+&lt;p&gt;Виклик виду &lt;code class=&quot;language-text&quot;&gt;setState({ key: value })&lt;/code&gt; вважається &lt;em&gt;застарілим&lt;/em&gt; (deprecated). Використовуйте &lt;code class=&quot;language-text&quot;&gt;setState&lt;/code&gt; зі &lt;em&gt;зворотним викликом&lt;/em&gt; (callback).&lt;/p&gt;
+&lt;h2&gt;Матеріали та ресурси&lt;/h2&gt;
+&lt;h3&gt;Посилання&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Код презентації та демо: &lt;a href=&quot;http://github.com/yevhene/present-fiber&quot;&gt;http://github.com/yevhene/present-fiber&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Ресурси&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=ZCuYPiUIONs&quot;&gt;Lin Clark - A Cartoon Intro to Fiber - React Conf 2017&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=QW5TE4vrklU&quot;&gt;Keynote - Andrew Clark aka @acdlite at @ReactEurope 2017&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=U9zFfIww3Go&quot;&gt;A tiny Fiber renderer - Dustan Kasten, React London 2017&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;</content:encoded></item></channel></rss>
